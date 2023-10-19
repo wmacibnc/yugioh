@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yu-Gi-Oh Pedra-Papel-Tesoura</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="src/assets/favicon/Favicon.ico" type="image/x-icon">
+    <!-- Css -->
+    <link rel="stylesheet" href="src/styles/main.css">
+
+    <!-- Css do Framework -->
+    <link rel="stylesheet" href="src/styles/buttons.css">
+    <link rel="stylesheet" href="src/styles/containers_and_frames.css">
+    <link rel="stylesheet" href="src/styles/reset.css">
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,400&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    
+    <audio id="bgm" loop>
+        <source src="./src/assets/audios/egyptian_duel.mp3" type="audio/mp3" />
+    </audio>
+    <div class="bg-video">
+        <video class="video" autoplay loop muted>
+            <source src="./src/assets/video/yugi.mp4" type="video/mp4" />
+            
+        </video>
+    </div>
+    
+    <div class="container">
+        <div class="container__left framed-golden-2">
+            <div class="score_box frame">
+                <span id="score_points">Jogador 0 vitória (s)</span>
+            </div>
+            <div class="menu__avatar">
+                <img src="" alt="" id="card-image-player">
+            </div>
+            <div class="cards_details frame">
+                <p id="card-name-player">Selecione</p>
+                <p id="card-type-player">uma carta</p>
+            </div>
+        </div>
+        <div class="container__center">
+            <div class="card-box__container">
+                <div class="card_box framed" id="computer-cards">
+                    <h4 class="title-computer">Máquina</h4>
+                </div>
+                <div class="card_versus__container">
+                    <div class="versus-top">
+                        <div class="card-infield">
+                            <img id="player-field-card" height="180px" width="125px">
+                        </div>
+                        <img height="100px" src="./src/assets/icons/millenium2.png">
+                        <div class="card-infield">
+                            <img id="computer-field-card" height="180px" width="125px">
+                        </div>
+                    </div>
+                    <div class="versus-bottom">
+                        <button id="result-duel" class="rpgui-button">RESULTADO</button>
+                        <button id="next-duel" class="rpgui-button" onclick="resetDuel()">Jogar Novamente</button>
+
+                    </div>
+                </div>
+                <div class="card_box framed" id="player-cards">
+                    <h4 class="title-player"> Jogador</h4>
+                </div>
+            </div>
+        </div>
+        <div class="container__right framed-golden-2">
+            <div class="computer_box frame">
+                <span id="computer_points">Máquina 0 vitória (s)</span>
+            </div>
+            <div class="menu__avatar">
+                <img src="" alt="" id="card-image-computer">
+            </div>
+            <div class="cards_details frame">
+                <p id="card-name-computer">Aguardando</p>
+                <p id="card-type-computer">jogador</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./src/scripts/engine.js" defer></script>
+</body>
+
+</html>
